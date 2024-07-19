@@ -15,47 +15,46 @@
     margin-right: 20px;
   }
 }
-
 .logo-title-location-container {
   display: flex;
   flex-direction: column;
 }
-
 .logo-title-container {
   display: flex;
   align-items: center;
 }
-
 .company-logo {
   width: 70px;
   height: 70px;
   margin-right: 20px;
 }
-
 .title-rating-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 .title-heading {
   color: #ffffff;
   font-size: 20px;
   font-weight: bold;
-  font-family: 'roboto';
+  font-family: 'Roboto';
   margin-bottom: 0px;
 }
-
 .rating-container {
   display: flex;
   align-items: center;
   padding-top: 0px;
 }
-
 .rating-icon {
   color: #fbbf24;
   font-size: 18px;
+  margin-right: 10px;
+}
+.rating-heading {
+  color: #ffffff;
+  font-size: 18px;
   font-weight: bold;
+
   font-family: 'Roboto';
 }
 
@@ -69,23 +68,20 @@
   margin-right: 10px;
   padding-left: 5px;
 }
-
 .location-icon {
   color: #ffffff;
   font-size: 22px;
   margin-right: 6px;
 }
-
 .brief-case-icon {
   color: #ffffff;
   font-size: 22px;
   margin-right: 10px;
 }
-
 .location-heading {
   color: #ffffff;
   font-size: 14px;
-  font-family: 'roboto';
+  font-family: 'Roboto';
 }
 
 .employee-type-container {
@@ -93,7 +89,6 @@
   align-items: center;
   padding-left: 5px;
 }
-
 .employee-type-heading {
   color: #ffffff;
   font-size: 14px;
@@ -106,7 +101,6 @@
   font-weight: bold;
   font-family: 'Roboto';
 }
-
 .description-text {
   color: #ffffff;
   font-size: 15px;
