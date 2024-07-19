@@ -71,8 +71,9 @@ class Jobs extends Component {
       apiStatus: apiStatusConstants.inProgress,
     })
     const {employeeType, minimumSalary, searchInput} = this.state
-    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${employeeType.join()}&minimumn=${minimumSalary}&search=${searchInput}`
+    const apiUrl = `https://apis.ccbp.in/jobs?employment_type=${employeeType.join()}&minimum_package=${minimumSalary}&search=${searchInput}`
     const jwtToken = Cookies.get('jwt_token')
+
     const options = {
       headers: {
         Authorization: `Bearer ${jwtToken}`,
@@ -86,7 +87,7 @@ class Jobs extends Component {
         companyLogoUrl: eachJob.company_logo_url,
         employmentType: eachJob.employment_type,
         id: eachJob.id,
-        jobDescriptiion: eachJob.job_description,
+        jobDescription: eachJob.job_description,
         location: eachJob.location,
         packagePerAnnum: eachJob.package_per_annum,
         rating: eachJob.rating,
@@ -94,6 +95,10 @@ class Jobs extends Component {
       }))
       this.setState({
         jobsList: updatedJobsData,
+        apiStatus: apiStatusConstants.success,
+      })
+    } else {
+      this.setState({
         apiStatus: apiStatusConstants.failure,
       })
     }
@@ -102,6 +107,7 @@ class Jobs extends Component {
   renderJobsList = () => {
     const {jobsList} = this.state
     const renderJobsList = jobsList.length > 0
+
     return renderJobsList ? (
       <div className="all-jobs-container">
         <ul className="jobs-list">
@@ -126,15 +132,15 @@ class Jobs extends Component {
   }
 
   renderFailureView = () => (
-    <div className="jobs-errro-view-container">
+    <div className="jobs-error-view-container">
       <img
         src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
         alt="failure view"
         className="jobs-failure-img"
       />
-      <h1 className="jobs-failure-heading-text">Oops! Somethings Went Wrong</h1>
+      <h1 className="jobs-failure-heading-text">Oops! Something Went Wrong</h1>
       <p className="jobs-failure-description">
-        We cannnot seem to find the page you are looking for
+        We cannot seem to find the page you are looking for
       </p>
       <button
         type="button"
@@ -219,7 +225,6 @@ class Jobs extends Component {
                   data-testid="searchButton"
                   className="search-button-container-desktop"
                   onClick={this.getJobs}
-                  aria-label="Close"
                 >
                   <BsSearch className="search-icon-desktop" />
                 </button>
@@ -232,5 +237,4 @@ class Jobs extends Component {
     )
   }
 }
-
 export default Jobs
