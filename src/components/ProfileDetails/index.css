@@ -4,14 +4,12 @@
   align-items: center;
   height: 200px;
 }
-
 .profile-error-view-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 200px;
 }
-
 .profile-failure-button {
   padding: 8px 32px;
   border-radius: 5px;
@@ -23,7 +21,6 @@
   font-size: 12px;
   font-family: 'Roboto';
 }
-
 .profile-success-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
   height: 200px;
@@ -32,17 +29,14 @@
   background-size: cover;
   padding: 30px;
 }
-
 .profile-img {
   width: 40px;
 }
-
 .profile-heading {
   color: #6366f1;
   font-size: 18px;
   font-family: 'Roboto';
 }
-
 .profile-bio {
   color: #7e858e;
   font-size: 16px;
