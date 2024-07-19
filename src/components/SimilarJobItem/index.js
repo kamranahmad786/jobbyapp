@@ -1,3 +1,4 @@
+
 import {BsFillBriefcaseFill, BsStarFill} from 'react-icons/bs'
 import {MdLocationOn} from 'react-icons/md'
 import './index.css'
@@ -45,5 +46,4 @@ const SimilarJobItem = props => {
     </li>
   )
 }
-
 export default SimilarJobItem
