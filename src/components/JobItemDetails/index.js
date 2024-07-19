@@ -6,7 +6,7 @@ import {BiLinkExternal} from 'react-icons/bi'
 import {MdLocationOn} from 'react-icons/md'
 
 import Header from '../Header'
-
+// eslint-disable-next-line import/extensions
 import SimilarJobItem from '../SimilarJobItem'
 import SkillsCard from '../SkillsCard'
 import './index.css'
@@ -79,7 +79,7 @@ class JobItemDetails extends Component {
       const data = await response.json()
       console.log(data)
       const updatedData = this.getFormattedData(data.job_details)
-      const updatedSimilarJobsData = data.similar_job.map(eachSimilarJob =>
+      const updatedSimilarJobsData = data.similar_jobs.map(eachSimilarJob =>
         this.getFormattedSimilarData(eachSimilarJob),
       )
       console.log(updatedData)
@@ -97,7 +97,7 @@ class JobItemDetails extends Component {
   renderFailureView = () => {
     const {match} = this.props
     const {params} = match
-
+    // eslint-disable-next-line
     const {id} = params
     return (
       <div className="job-item-error-view-container">
@@ -107,17 +107,17 @@ class JobItemDetails extends Component {
           className="job-item-failure-img"
         />
         <h1 className="job-item-failure-heading-text">
-          Oops! Somethings Went Wrong
+          Oops! Something Went Wrong
         </h1>
         <p className="job-item-failure-description">
           We cannot seem to find the page you are looking for
         </p>
+
         <button
           type="button"
           id="button"
           className="job-item-failure-button"
           onClick={this.getJobData}
-          aria-label="Close"
         >
           Retry
         </button>
@@ -135,7 +135,7 @@ class JobItemDetails extends Component {
     const {jobData, similarJobsData} = this.state
     const {
       companyLogoUrl,
-      companyWebiteUrl,
+      companyWebsiteUrl,
       employmentType,
       jobDescription,
       location,
@@ -182,7 +182,7 @@ class JobItemDetails extends Component {
           <div className="description-visit-container">
             <h1 className="description-heading">Description</h1>
             <div className="visit-container">
-              <a href={companyWebiteUrl} className="visit-heading">
+              <a href={companyWebsiteUrl} className="visit-heading">
                 Visit
               </a>
               <BiLinkExternal className="visit-icon" />
@@ -244,5 +244,4 @@ class JobItemDetails extends Component {
     )
   }
 }
-
 export default JobItemDetails
