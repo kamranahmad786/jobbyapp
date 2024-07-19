@@ -34,7 +34,7 @@ class ProfileCard extends Component {
     if (response.ok === true) {
       const data = await response.json()
       const profileData = {
-        name: data.profile_details_name,
+        name: data.profile_details.name,
         profileImageUrl: data.profile_details.profile_image_url,
         shortBio: data.profile_details.short_bio,
       }
@@ -45,7 +45,7 @@ class ProfileCard extends Component {
   }
 
   renderProfileView = () => {
-    const {profileData} = this.data
+    const {profileData} = this.state
     const {name, profileImageUrl, shortBio} = profileData
     return (
       <div className="profile-success-container">
@@ -70,13 +70,14 @@ class ProfileCard extends Component {
   )
 
   renderLoadingView = () => (
-    <div className="profile-loader-container" id="loader">
+    <div className="profile-loader-container " id="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
 
   render() {
     const {apiStatus} = this.state
+
     switch (apiStatus) {
       case apiStatusConstants.success:
         return this.renderProfileView()
