@@ -17,7 +17,7 @@ class App extends Component {
         <Route exact path="/login" component={Login} />
         <ProtectedRoute exact path="/" component={Home} />
         <ProtectedRoute exact path="/jobs" component={Jobs} />
-        <ProtectedRoute exact path="jobs/:id" component={JobItemDetails} />
+        <ProtectedRoute exact path="/jobs/:id" component={JobItemDetails} />
         <Route path="/not-found" component={NotFound} />
         <Redirect to="not-found" />
       </Switch>
